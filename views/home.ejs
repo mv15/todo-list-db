@@ -1,0 +1,107 @@
+<!-- // fill form -->
+
+<div id="container">
+    <h1>TODO App</h1>
+    <hr>
+
+    <!-- form to get information and send post request to /add to the database -->
+    <form action="/add" method="POST">
+
+        <div class="inner-container">
+            <!-- description input -->
+            <label for="description">DESCRIPTION</label> <br>
+            <input id="belowinput" type="text" name="description" placeholder="WHAT DO YOU NEED TO DO ?" required>
+            <hr>
+        </div>
+        
+        <br>
+
+        <!-- category and date input -->
+        <div class="inner-container">
+            <label for="category">CATEGORY</label> 
+            <label for="duedate" id="date">DUE DATE</label>
+
+            <br>
+            
+            <!-- <input class="half" type="text" name="category" placeholder="CHHOSE A CATEGORY" required> -->
+            <select name="category" id="category">
+                <option value="Choose a category" select>Choose a category</option>
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="home">Home</option>
+                <option value="school">School</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="other">Other</option>
+              </select>
+
+            <input id="picker" type="date" class="half" name="duedate" placeholder="DATE" required>
+            <hr>
+        </div>
+        
+        <!-- add tasks button -->
+        <div id="buttons">
+            <input type="submit" value="ADD TASKS" id="add">
+            
+        </div>
+
+        <hr>
+        
+        <!-- Listing -->
+    </form>
+
+    <br>
+    
+    <!-- show todos -->
+    <div>
+        <!-- add todo to this page using ejs syntax -->
+        <% for(var i = 0; i < todo.length; i++) { %>
+            
+            <div class="todos">
+                <!-- <input type="checkbox" id="checkbox" class="printcheckbox"> -->
+                <h4 class="printdescription"> <%= todo[i].description %> </h4>
+                <h4 class="printcategory"> <%= todo[i].category %> </h4>
+                <p class="printdate"> 
+                    <% let month = "" %>
+                    <% if(todo[i].duedate.getMonth() == 1) { %>
+                        <% month = "JAN" %>
+                    <% } else if(todo[i].duedate.getMonth() == 2) { %>
+                        <% month = "FEB" %>
+                    <% }else if(todo[i].duedate.getMonth() == 3){ %>
+                        <% month = "MAR" %>
+                    <%} else if(todo[i].duedate.getMonth() == 4){ %>
+                        <% month = "APR" %>
+                    <% }else if(todo[i].duedate.getMonth() == 5){ %>
+                        <% month = "MAY" %>
+                    <% }else if(todo[i].duedate.getMonth() == 6){ %>
+                        <% month = "JUN" %>
+                    <% }else if(todo[i].duedate.getMonth() == 7){ %>
+                        <% month = "JUL" %>
+                    <% }else if(todo[i].duedate.getMonth() == 8){ %>
+                        <% month = "AUG" %>
+                    <%} else if(todo[i].duedate.getMonth() == 9){ %>
+                        <% month = "SEP" %>
+                    <% }else if(todo[i].duedate.getMonth() == 10){ %>
+                        <% month = "OCT" %>
+                    <% }else if(todo[i].duedate.getMonth() == 11){ %>
+                        <% month = "NOV" %>
+                    <% }else if(todo[i].duedate.getMonth() == 11){ %>
+                        <% month = "DEC" %>
+                    <% } %>    
+                     
+                    <%= month + " " + todo[i].duedate.getDate() + ", " + todo[i].duedate.getFullYear()%> 
+
+                    <!-- <a href="/delete/id=?"+></a> -->
+                    
+                </p>
+                <!-- for deleting todos -->
+                <a href="/delete/?id=<%= todo[i]._id %>">     <!--   req.query.phone  -->
+                    <input type="submit" value="DELETE" id="delete">
+                </a>
+                <br><br><hr>
+            </div>
+
+        <% } %>
+
+    </div>
+
+</div>

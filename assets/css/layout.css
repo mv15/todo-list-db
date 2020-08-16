@@ -1,0 +1,127 @@
+/*  */
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+/* styling whole container */
+#container {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 3%;
+    margin-bottom: auto;
+    background-color: white;
+}
+
+/* style TODO list heading */
+#container h1 {
+    text-align: center;
+    padding-top: 0.5em;
+}
+
+/* styling buttons */
+#buttons {
+    text-align: center;
+    /* margin: 2em; */
+    padding-top: 2em;
+    border: none;
+}
+
+#buttons input {
+    font-size: 20px;
+    padding: 10px;
+    color: white;
+}
+
+/* add button */
+#add{
+    background-color: brown;
+}
+
+/* delete button */
+
+#delete {
+    background-color: red;
+    font-size: 20px;
+    /* padding: 10px; */
+    color: white;
+    /* float: right; */
+    /* margin-left: 1em; */
+    /* margin-top: 1em; */
+    /* margin-bottom: 1em; */
+    margin-left: 85%;
+    /* margin-right: 2em; */
+}
+
+.inner-container{
+    margin-left: 5%;
+    margin-right: 5%;
+    /* margin-top: 5%; */
+}
+
+input {
+    margin-bottom: 2em;
+    border: none;
+}
+
+/* select */
+#belowinput{
+    width: 100%;
+    padding: 5px;
+    margin-top: 1em;
+}
+
+/* date and category */
+.half{
+    width: 45%;
+    margin-top: 1em;
+    padding: 5px;
+}
+
+#date {
+    margin-left: 34%;
+}
+
+#category{
+    width: 45%;
+    border: none;
+    padding: 5px;
+}
+
+#category option {
+    padding: 10px;
+
+}
+
+
+/* .printcheckbox {
+    margin-left: 2em;
+    display: hidden;
+} */
+
+.printdate {
+    margin-left: 3em;
+    /* margin-bottom: 1em; */
+    margin-top: 1em;
+    margin-bottom: -1em;
+}
+
+.printcategory {
+    float: right;
+    margin-right: 2em;
+    /* padding: 5px; */
+    /* font-size: 1.5em; */
+    /* margin-top: -1px; */
+    text-transform: uppercase;
+}
+
+.printdescription{
+    font-size: 1.5em;
+    padding: 3px;
+    margin-left: 2em;
+}
+
+h4{
+    display: inline;
+}
